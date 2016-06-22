@@ -1,0 +1,16 @@
+
+def calcShannonEnt(dataSet):
+    numEntries = len(dataSet)
+    labelCounts = {}
+    for featVec in dataSet:
+        # assign lable as last colum of dataSet
+        currentLable = featVec[-1]
+        # if label not in dictionary put it in 
+        if currentLabel not in labelCounts.keys():
+            # expand dictionary to add currentLabel
+            labelCounts[currentLabel] = 0
+            labelCounts[currentLabel] += 1
+        ShannonEnt = 0.0
+        for key in labelCounts:
+            prob = float (labelCounts[key])/numEntries
+            shannonEnt -= prob * log(prob,2)
